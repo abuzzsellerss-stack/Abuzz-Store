@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow authenticated users to read and write user data
+    match /users/{userId} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Allow public access to product catalog
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Allow orders to be created and tracked
+    match /orders/{orderId} {
+      allow read, create, update: if true;
+    }
+    
+    // Default fallback
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

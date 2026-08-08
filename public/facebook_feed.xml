@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Abuzz Store Product Catalogue</title>
+    <link>https://abuzz.store</link>
+    <description>Official Abuzz Store Product Catalogue Feed for Meta Commerce Manager and Instagram Shop</description>
+    <item>
+      <g:id><![CDATA[ABBPS10]]></g:id>
+      <g:title><![CDATA[Suman Steel Block Carpenter Plane 10-inch]]></g:title>
+      <g:description><![CDATA[High-grade industrial Suman Steel Block Carpenter Plane 10-inch. Precision manufactured for extreme durability and BIS quality compliance.]]></g:description>
+      <g:link>https://abuzz.store/product/ABBPS10</g:link>
+      <g:image_link>https://cdn.abuzz.store/products/ABBPS10_img1.jpg</g:image_link>
+      <g:brand>LXMI</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>799.00 INR</g:price>
+      <g:google_product_category>Business &amp; Industrial &gt; Industrial Supplies</g:google_product_category>
+    </item>
+    <item>
+      <g:id><![CDATA[ABBPS14]]></g:id>
+      <g:title><![CDATA[Suman Steel Block Carpenter Plane 14-inch]]></g:title>
+      <g:description><![CDATA[High-grade industrial Suman Steel Block Carpenter Plane 14-inch. Precision manufactured for extreme durability and BIS quality compliance.]]></g:description>
+      <g:link>https://abuzz.store/product/ABBPS14</g:link>
+      <g:image_link>https://cdn.abuzz.store/products/ABBPS14_img1.jpg</g:image_link>
+      <g:brand>LXMI</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>999.00 INR</g:price>
+      <g:google_product_category>Business &amp; Industrial &gt; Industrial Supplies</g:google_product_category>
+    </item>
+    <item>
+      <g:id><![CDATA[ABBPS5]]></g:id>
+      <g:title><![CDATA[Suman Steel Block Carpenter Plane 5-inch]]></g:title>
+      <g:description><![CDATA[High-grade industrial Suman Steel Block Carpenter Plane 5-inch. Precision manufactured for extreme durability and BIS quality compliance.]]></g:description>
+      <g:link>https://abuzz.store/product/ABBPS5</g:link>
+      <g:image_link>https://cdn.abuzz.store/products/ABBPS5_img1.jpg</g:image_link>
+      <g:brand>LXMI</g:brand>
+      <g:condition>new</g:condition>
+      <g:availability>in stock</g:availability>
+      <g:price>499.00 INR</g:price>
+      <g:google_product_category>Business &amp; Industrial &gt; Industrial Supplies</g:google_product_category>
+    </item>
+  </channel>
+</rss>

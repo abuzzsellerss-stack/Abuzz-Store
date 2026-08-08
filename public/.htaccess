@@ -1,0 +1,33 @@
+# Apache .htaccess configuration for Hostinger Shared Hosting (Next.js Static Export)
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ensure correct MIME types for CSS and JavaScript
+AddType text/css .css
+AddType application/javascript .js
+
+# Directly serve Next.js static assets (_next/ CSS, JS, fonts)
+RewriteCond %{REQUEST_URI} ^/_next/ [NC]
+RewriteRule ^ - [L]
+
+# Serve existing files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite clean URLs to .html files if they exist (e.g. /profile -> /profile.html)
+RewriteCond %{REQUEST_URI} !\.html$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.*)$ /$1.html [L]
+
+# Do not rewrite /api/ requests to index.html
+RewriteCond %{REQUEST_URI} ^/api/ [NC]
+RewriteRule ^ - [L]
+
+# Fallback to index.html for SPA dynamic routes (e.g. /product/prod-1)
+RewriteRule ^ index.html [L]

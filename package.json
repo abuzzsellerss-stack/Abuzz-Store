@@ -1,0 +1,37 @@
+{
+  "name": "abuzz-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/generate_facebook_feed.js && node scripts/remove-admin-page.js && node scripts/copy-all-subfolder-images.js",
+    "dev": "next dev --turbo",
+    "dev:clean": "node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){}\" && next dev --turbo",
+    "build": "node scripts/generate_facebook_feed.js && next build && node scripts/copy-htaccess.js",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "node ./node_modules/vitest/vitest.mjs run"
+  },
+  "dependencies": {
+    "@cashfreepayments/cashfree-js": "^1.0.5",
+    "@tailwindcss/postcss": "^4",
+    "cashfree-pg": "^4.3.5",
+    "exceljs": "^4.4.0",
+    "firebase": "^12.16.0",
+    "lucide-react": "^0.470.0",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwindcss": "^4",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "firebase-tools": "^13.31.0",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
+  }
+}
