@@ -1,0 +1,48 @@
+# Apache .htaccess configuration for Hostinger Shared Hosting (Next.js Static Export)
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ensure correct MIME types for CSS, JS, SVG, WebP, WOFF2
+AddType text/css .css
+AddType application/javascript .js
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType font/woff2 .woff2
+
+# Prevent caching of HTML pages & JSON manifests so browsers always fetch fresh JS bundles
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm|json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# 0. EXPLICIT RULE: NEVER rewrite _next, next_assets, or static assets (.js, .css, .png, .jpg, .svg, .json, .ico, .woff2)
+RewriteCond %{REQUEST_URI} ^/_next/ [NC,OR]
+RewriteCond %{REQUEST_URI} ^/next_assets/ [NC,OR]
+RewriteCond %{REQUEST_URI} \.(js|css|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2|ttf|eot|json|csv|xml|txt|php)$ [NC]
+RewriteRule ^ - [L]
+
+# 2. NEVER rewrite /api/ requests
+RewriteRule ^api/ - [L]
+
+# 3. Serve existing files or directories directly if they exist on disk
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 4. Handle trailing slash directories and extensionless SPA routes cleanly
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*)$ $1/index.html [L]
+
+# 5. Fallback to root index.html ONLY for unknown non-asset routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+

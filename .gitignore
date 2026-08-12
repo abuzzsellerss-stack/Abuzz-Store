@@ -1,0 +1,62 @@
+# dependencies
+node_modules/
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+coverage/
+
+# next.js & build outputs
+.next/
+.next
+out/
+out
+build/
+build
+dist/
+dist
+
+# archives and large dumps
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+hostinger-upload-abuzz.zip
+deploy.zip
+hostinger_deploy.zip
+
+# temporary & large media folders
+temp_products/
+public/products/
+public/banners/
+scripts/git_portable/
+
+
+
+# misc
+.DS_Store
+*.pem
+*.log
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# environment variables
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

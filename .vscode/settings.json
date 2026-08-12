@@ -1,0 +1,11 @@
+{
+  "html.validate.scripts": false,
+  "search.exclude": {
+    "**/out": true,
+    "**/.next": true
+  },
+  "files.watcherExclude": {
+    "**/out/**": true,
+    "**/.next/**": true
+  }
+}
